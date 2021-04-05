@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { fromEventPattern } from 'rxjs';
 import { Dish } from '../shared/dish';
-import { DISHES } from '../shared/dishes';
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
+
+import { Observable } from 'rxjs';
 
 import { map, catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -45,12 +44,8 @@ export class DishService {
         'Content-type': 'application/json'
       })
     };
-
     return this.http.put<Dish>(baseURL + 'dishes/' + dish.id, dish, httpOptions)
     .pipe(catchError(this.processHTTPMsgService.handleError));
-
-
-
   };
 
 }

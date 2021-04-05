@@ -2,6 +2,10 @@
 
 import 'zone.js/dist/zone-testing';
 import { getTestBed } from '@angular/core/testing';
+
+
+
+
 import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
@@ -15,6 +19,6 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('./', true, /\.spec\.ts$/);
+const context = require.context('./', true, /menu\.component\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
